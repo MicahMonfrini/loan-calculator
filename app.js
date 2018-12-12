@@ -1,6 +1,6 @@
 // DOM ELEMENTS
 
-const calculate = document.getElementById("calculate");
+const calculate = document.getElementById("loan-form");
 
 // EVENT LISTENERS
 
