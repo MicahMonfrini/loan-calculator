@@ -7,7 +7,6 @@ calculate.addEventListener('submit', calculateResults);
 // CALCULATE FUNCTION
 
 function calculateResults(e) {
-  console.log('calculating...')
   // DOM element variables
   const amountEl = document.getElementById('amount');
   const interestEl = document.getElementById('interest');
