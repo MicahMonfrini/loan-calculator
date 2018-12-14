@@ -14,7 +14,7 @@ function calculateResults(e) {
   const yearsEl = document.getElementById('years');
   const monthlyPaymentEl = document.getElementById('monthly-payment');
   const totalPaymentEl = document.getElementById('total-payment');
-  const totalInterestEL = document.getElementById('total-interest');
+  const totalInterestEl = document.getElementById('total-interest');
 
   // input value algorithms (converted to decimal values)
   const principle = parseFloat(amount.value);
@@ -29,7 +29,7 @@ function calculateResults(e) {
   if (isFinite(monthly)){
     monthlyPaymentEl.value = monthly.toFixed(2);
     totalPaymentEl.value = (monthly * calculatedPayments).toFixed(2);
-    totalInterestEL.value = ((monthly * calculatedPayments) - principle).toFixed(2);
+    totalInterestEl.value = ((monthly * calculatedPayments) - principle).toFixed(2);
   } else {
     alert('Please check your numbers!')
   }
