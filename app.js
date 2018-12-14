@@ -8,7 +8,7 @@ calculate.addEventListener('submit', calculateResults);
 
 function calculateResults(e) {
   console.log('calculating...')
-  // dom element variables
+  // DOM element variables
   const amountEl = document.getElementById('amount');
   const interestEl = document.getElementById('interest');
   const yearsEl = document.getElementById('years');
@@ -27,13 +27,32 @@ function calculateResults(e) {
 
   // check to see if number is finite
   if (isFinite(monthly)){
+    // set DOM elements to display the calculated values
     monthlyPaymentEl.value = monthly.toFixed(2);
     totalPaymentEl.value = (monthly * calculatedPayments).toFixed(2);
     totalInterestEl.value = ((monthly * calculatedPayments) - principle).toFixed(2);
+    // otherwise, display error message
   } else {
-    alert('Please check your numbers!')
+    showError('Please check your numbers!');
   }
 
   // prevent default form submission
   e.preventDefault();
+}
+
+// SHOW ERROR FUNCTION
+
+function showError(error) {
+  // create a div
+  const errorDiv = document.createElement('div');
+
+  // DOM element variables
+  const card = document.querySelector('.card');
+  const heading = document.querySelector('.heading');
+
+  // add class
+  errorDiv.className = 'alert alert-danger';
+
+  // create text-node and append to div
+  errorDiv.appendChild(document.createTextNode(error));
 }
