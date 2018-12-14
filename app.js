@@ -25,6 +25,15 @@ function calculateResults(e) {
   const x = Math.pow(1 + calculatedInterest, calculatedPayments);
   const monthly = (principle*x*calculatedInterest)/(x-1);
 
+  // check to see if number is finite
+  if (isFinite(monthly)){
+    monthlyPaymentEl.value = monthly.toFixed(2);
+    totalPaymentEl.value = (monthly * calculatedPayments).toFixed(2);
+    totalInterestEL.value = ((monthly * calculatedPayments) - principle).toFixed(2);
+  } else {
+    alert('Please check your numbers!')
+  }
+
   // prevent default form submission
   e.preventDefault();
 }
