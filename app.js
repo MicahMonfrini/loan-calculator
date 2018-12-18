@@ -7,6 +7,8 @@ calculate.addEventListener('submit', (e) => {
   document.getElementById('results').style.display = 'none';
   // show loading gif when calculate is clicked
   document.getElementById('loading').style.display = 'block';
+  // show loading gif for 2 seconds then display results
+  setTimeout(calculateResults, 2000)
   // prevent default form submission
   e.preventDefault();
 });
@@ -37,9 +39,14 @@ function calculateResults() {
     monthlyPaymentEl.value = monthly.toFixed(2);
     totalPaymentEl.value = (monthly * calculatedPayments).toFixed(2);
     totalInterestEl.value = ((monthly * calculatedPayments) - principle).toFixed(2);
+    document.getElementById('results').style.display = 'block';
+    // hide loading gif
+    document.getElementById('loading').style.display = 'none';
     // otherwise, display error message
   } else {
     showError('Please check your numbers!');
+    // hide loading gif
+    document.getElementById('loading').style.display = 'none';
   }
 }
 
