@@ -2,11 +2,18 @@
 // form element variable
 const calculate = document.getElementById("loan-form");
 // event listener for calculate button
-calculate.addEventListener('submit', calculateResults);
+calculate.addEventListener('submit', (e) => {
+  // hide results  
+  
+  // show loading gif when calculate is clicked
+
+  // prevent default form submission
+  e.preventDefault();
+});
 
 // CALCULATE FUNCTION
 
-function calculateResults(e) {
+function calculateResults() {
   // DOM element variables
   const amountEl = document.getElementById('amount');
   const interestEl = document.getElementById('interest');
@@ -34,9 +41,6 @@ function calculateResults(e) {
   } else {
     showError('Please check your numbers!');
   }
-
-  // prevent default form submission
-  e.preventDefault();
 }
 
 // SHOW ERROR FUNCTION
