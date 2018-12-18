@@ -4,9 +4,9 @@ const calculate = document.getElementById("loan-form");
 // event listener for calculate button
 calculate.addEventListener('submit', (e) => {
   // hide results  
-  
+  document.getElementById('results').style.display = 'none';
   // show loading gif when calculate is clicked
-
+  document.getElementById('loading').style.display = 'block';
   // prevent default form submission
   e.preventDefault();
 });
